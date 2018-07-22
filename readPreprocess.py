@@ -24,7 +24,7 @@ class readPreprocess():
         print("Filtering out required columns and cleaning data ...")
         import datetime as dt
         self.data_df = dataframe
-        filter_df1 = self.data_df.iloc[:,[50, 64, 5, 6, 18, 19, 49]]
+        filter_df1 = self.data_df.iloc[:,[50, 64, 5, 6, 18, 19, 21, 49]]
         ##Selecting unique rows by using distinct Loan ID
         filter_df1 = filter_df1.drop_duplicates('LoanKey')
 

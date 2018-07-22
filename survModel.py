@@ -1,10 +1,11 @@
 
 class survModel():
 
-    def __init__(self, inputDf, eventTime, censorVar):
+    def __init__(self, inputDf, eventTime, censorVar, label):
         self.inputDf = inputDf
         self.eventTime = eventTime
         self.censorVar = censorVar
+        self.label = label
 
 
     def kaplanMeier(self):
@@ -13,7 +14,8 @@ class survModel():
         self.kmf = KaplanMeierFitter()
         time = df[self.eventTime].dt.days
         status = df[self.censorVar]
-        self.kmf.fit(time, event_observed = status, label='KM_Estimate')
+        lab = self.label
+        self.kmf.fit(time, event_observed = status, label = lab)
 
 
 
